@@ -4,43 +4,20 @@ document.addEventListener('DOMContentLoaded', () => {
   const output = document.getElementById('outputArea');
 
   form.addEventListener('submit', (ev) => {
-    ev.preventDefault();                 // spriječi reload
+    ev.preventDefault();                 // spriječi reload stranice
     const val = input.value.trim();
     if (!val) return;                    // ništa ako je prazno
 
-    // napravi novo stilizirano prikazno polje
-    const card = document.createElement('article');
+    // kreiraj stilizirani prikaz (karticu)
+    const card = document.createElement('div');
     card.className = 'card';
+    card.textContent = val;
 
-    const avatar = document.createElement('div');
-    avatar.className = 'avatar';
-    // prva dva znaka u velikom
-    avatar.textContent = val.slice(0,2).toUpperCase();
-
-    const message = document.createElement('div');
-    message.className = 'message';
-
-    const text = document.createElement('div');
-    text.className = 'text';
-    text.textContent = val;
-
-    const meta = document.createElement('div');
-    meta.className = 'meta';
-    const now = new Date();
-    meta.textContent = `Prikazano: ${now.toLocaleString()}`;
-
-    message.appendChild(text);
-    message.appendChild(meta);
-
-    card.appendChild(avatar);
-    card.appendChild(message);
-
-    // ubaci na vrh outputa
+    // dodaj na vrh output-a
     output.prepend(card);
 
-    // očisti input i fokusiraj za novo
+    // očisti input i fokusiraj
     input.value = '';
     input.focus();
-
   });
 });
