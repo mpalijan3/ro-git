@@ -3,11 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>input -> prikaz</title>
     <link rel="stylesheet" href="./style.css">
     <script async defer src="./script.js"></script>
 </head>
 <body>
-    Hello world!
+    <main class="container">
+        <h1>Unesi tekst</h1>
+
+        <form id="textForm" class="form" autocomplete="off">
+            <label for="userText" class="sr-only">Tekst</label>
+            <input id="userText" name="userText" type="text" placeholder="Upiši nešto..." required />
+            <button type="submit" id="submitBtn">Pošalji</button>
+        </form>
+
+        <section id="outputArea" class="output-area" aria-live="polite"></section>
+    </main>
 </body>
 </html>
