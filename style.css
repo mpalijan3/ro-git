@@ -109,3 +109,21 @@ h1{margin:0 0 18px 0; font-size:1.6rem; color:var(--accent)}
   color:var(--muted);
   margin-top:6px;
 }
+
+.output-area {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.card {
+  background-color: #7dd3fc; /* plava pozadina */
+  color: #012028;            /* tamni tekst */
+  font-family: 'Arial', sans-serif;
+  font-weight: bold;
+  font-size: 1.2rem;
+  padding: 12px 16px;
+  border-radius: 10px;
+}
+
